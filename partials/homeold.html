@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-lg-3 col-md-4 hidden-xs" id="left">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <strong>Your Items</strong>
+            </div>
+            <div class="panel-body" style="overflow-y: auto;">
+                <div class="row" ng-repeat="marker in markers">
+                    <h4><span ng-bind="marker.name"></span> <span ng-bind="marker.descr"></span></h4>
+                    <input type="checkbox" ng-model="marker.show" /> Marker show &nbsp;<input type="checkbox" ng-model="marker.label.show" /> Label show
+                    <span class="pull-left">Date: {{marker.time}}</span><div class="btn btn-xs btn-default pull-right" data-dev="{{marker.label.message}}"  ng-click="showDetails(marker.label.message)">Details</div><div class="btn btn-xs btn-default pull-right" data-dev="{{marker.label.message}}" ng-click="hist = showHistory(marker.label.message)">History</div>
+                    <span style="display: inline-block;">Speed: {{marker.speed}}, Dir: {{marker.dir}}</span>
+                </div>
+                <div class="row" data-id="details" ng-show="selected">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <strong ng-bind ="selected.name | json">{{selected.name}}</strong>
+                            <div class="btn btn-xs btn-default pull-right" ng-click="selected = undefined">Hide</div>
+                        </div>
+                        <div class="panel-body" style="overflow-y: auto;">
+                            <span style="display: block;">Device: {{selected.dev}}</span>
+                            <span style="display: block;">Location: {{selected.lon}},{{selected.lat}}</span>
+                            <span style="display: block;">Altitude: {{selected.alt}} m</span>
+                            <span style="display: block;">Battery power: {{selected.volt}} volt</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" data-id="history" ng-show="history">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <strong ng-bind ="selected.name | json">{{history.name}}</strong>
+                            <div class="btn btn-xs btn-default pull-right" ng-click="history = false">Hide</div>
+                        </div>
+                        <div class="panel-body" style="overflow-y: auto;">
+                            <span class="form-control col-lg-4 btn btn-xs btn-default" data-period="1" ng-click="clickEvent($event)">1 hour</span>
+                            <span class="form-control btn btn-xs btn-default" data-period="6" ng-click="clickEvent($event)">6 hours</span>
+                            <span class="form-control btn btn-xs btn-default" data-period="12" ng-click="clickEvent($event)">12 hours</span>
+                            <span>from-to</span>
+                            <div class="input-daterange" id="datepicker" >
+                                <input type="text" class="form-control input-small half-input" name="start" />
+                                <input type="text" class="form-control input-small half-input" name="end" />
+                                <span class="form-control btn btn-xs btn-default">Load</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-9 col-md-8 col-xs-12" id="center">
+        <openlayers ol-center="center" custom-layers="true" ol-defaults="defaults" ol-markers="markers" id="map">
+            <ol-layer ol-layer-properties="layer" ng-repeat="layer in layers|filter:{active:true}"></ol-layer>
+            <ol-marker ng-repeat="marker in markers" ol-marker-properties="marker"></ol-marker>
+        </openlayers>        
+    </div>
+</div>
