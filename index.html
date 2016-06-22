@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="electroninvest">
+    <meta name="author" content="Ivan Kolbasyuk">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/resources/icons/favicon.png">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/loading-bar.css">
+    <link rel="stylesheet" href="css/main.css">
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="css/ol.css" />
+    <link rel="stylesheet" href="css/angular-openlayers-directive.css" />
+    
+    <!-- <link rel="stylesheet" href="http://openlayers.org/en/v3.13.1/css/ol.css" type="text/css"> -->
+    
+    
+    
+    
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <title>Mobile ANG-BS-OL3 alpha</title>
+
+</head>
+
+<body ng-app="sledaModule">
+
+    <div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation" data-ng-controller="LoginController">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Mobile ANG-BS-OL3 alpha <span data-ng-show="token" ng-bind="currentUser.user"></span></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li data-ng-show ="token"><a ng-href="#/">Online</a></lidata-ng-show>
+                    <li data-ng-show="token"><a ng-href="#/me">Me</a></li>
+                    <li data-ng-show="token"><a ng-click="logout()">Logout</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+    <div class="container container-fluid" ng-view="">
+    </div> <!-- /container -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="lib/bootstrap-datepicker.js"></script>
+
+
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script> -->
+<!-- <script src="http://openlayers.org/en/v3.13.1/build/ol.js" type="text/javascript"></script> -->
+    <script src="lib/ol.js"></script>
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-sanitize.min.js"></script>
+    <script src="lib/angular-openlayers-directive.min.js"></script>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>
+<script src="lib/ngStorage.js"></script>
+<script src="lib/loading-bar.js"></script>
+<script src="js/sleda/Sleda.Module.js"></script>
+<script src="js/sleda/Login.Controller.js"></script>
+<script src="js/sleda/Sleda.Service.js"></script>
+
+
+
+    <script>var map, vectorSource;</script>
+</body>
+</html>
