@@ -6,19 +6,19 @@
     <meta name="description" content="electroninvest">
     <meta name="author" content="Ivan Kolbasyuk">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/resources/icons/favicon.png">
+    <link rel="shortcut icon" href="resources/icons/favicon.png">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/loading-bar.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="resources/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="resources/css/loading-bar.css">
+    <link rel="stylesheet" href="resources/css/main.css">
     
     
     
     
     
-    <link rel="stylesheet" href="css/ol.css" />
-    <link rel="stylesheet" href="css/angular-openlayers-directive.css" />
+    <link rel="stylesheet" href="resources/css/ol.css" />
+    <link rel="stylesheet" href="resources/css/angular-openlayers-directive.css" />
     
     <!-- <link rel="stylesheet" href="http://openlayers.org/en/v3.13.1/css/ol.css" type="text/css"> -->
     
@@ -38,8 +38,8 @@
 </head>
 
 <body ng-app="sledaModule">
-
-    <div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation" data-ng-controller="LoginController">
+    
+    <header class="navbar navbar navbar-inverse" role="navigation" data-ng-controller="LoginController">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -48,42 +48,88 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Mobile ANG-BS-OL3 alpha <span data-ng-show="token" ng-bind="currentUser.user"></span></a>
+                <a class="navbar-brand" href="#"><img src="resources/images/Logo-Sleda-GPS.png" /> Mobile ANG-BS-OL3 alpha <span data-ng-show="token" ng-bind="currentUser.user"></span></a>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li data-ng-show ="token"><a ng-href="#/">Online</a></lidata-ng-show>
-                    <li data-ng-show="token"><a ng-href="#/me">Me</a></li>
-                    <li data-ng-show="token"><a ng-click="logout()">Logout</a></li>
-                </ul>
-            </div><!--/.nav-collapse -->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#"><span></span>Active link</a></li>
+            <li><a href="#">Link</a></li>
+            <!--<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Действие</a></li>
+                <li><a href="#">Другое действие</a></li>
+                <li><a href="#">Что-то еще</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Отдельная ссылка</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Еще одна отдельная ссылка</a></li>
+              </ul>
+            </li>-->
+          </ul>
+          <!--<form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Отправить</button>
+          </form>-->
+          <ul class="nav navbar-nav navbar-right">
+            <li><h4 style="color: #ffffff; margin-top: 15px; margin-right: 25px;" id="title" class="hidden-xs">Fleet management</h4></li>
+            <li class="dropdown hidden-xs">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Show/hide<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a class="btn" data-role="left" data-event="columns">Show/hide left</a></li>
+                <li><a class="btn" data-role="right" data-event="columns">Show/hide right</a></li>
+                <li><a class="btn" data-role="details" data-event="columns">Show/hide details</a></li>
+                <!-- <li class="divider"></li>
+                <li><a href="#">Отдельная ссылка</a></li>-->
+              </ul>
+            </li>
+            <li>
+                <a data-toggle="tooltip" data-placement="bottom" data-original-title="Избери език">EN</a>
+                <div style="display: none;" id="current-language" data-original-title="Select kanguage" data-placement="bottom">BG</div>
+            </li>
+            <li>
+                <a href="https://www.sleda-gps.eu/telenor/help/index.html" target="_blank" class="btn-help" data-original-title="Помощ" data-placement="bottom">
+                    <span class="glyphicon glyphicon-question-sign"></span> Help
+                </a>
+	        </li>
+            <li class="active">
+                <a data-original-title="Logout" data-placement="bottom">
+                    <span class="glyphicon glyphicon-log-out"></span> Logout
+                </a>
+	        </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
         </div>
-    </div>
-    <div class="container container-fluid" ng-view="">
+    </header>
+    <div style="height: 83.33vh;" class="container main-container container-fluid" ng-view="">
     </div> <!-- /container -->
+    
+    <footer>
+        <div class="col-xs-12 navbar-inverse"><h6 style="color: #ffffff; margin-right: 25px;" id="title"> © footer 2016</h6></div>
+    </footer>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="lib/bootstrap-datepicker.js"></script>
+<script src="assets/lib/bootstrap-datepicker.js"></script>
 
 
 <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script> -->
 <!-- <script src="http://openlayers.org/en/v3.13.1/build/ol.js" type="text/javascript"></script> -->
-    <script src="lib/ol.js"></script>
-    <script src="lib/angular.min.js"></script>
-    <script src="lib/angular-sanitize.min.js"></script>
-    <script src="lib/angular-openlayers-directive.min.js"></script>
+    <script src="assets/lib/ol.js"></script>
+    <script src="assets/lib/angular.min.js"></script>
+    <script src="assets/lib/angular-sanitize.min.js"></script>
+    <script src="assets/lib/angular-openlayers-directive.min.js"></script>
 
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>
-<script src="lib/ngStorage.js"></script>
-<script src="lib/loading-bar.js"></script>
-<script src="js/sleda/Sleda.Module.js"></script>
-<script src="js/sleda/Login.Controller.js"></script>
-<script src="js/sleda/Sleda.Service.js"></script>
+<script src="assets/lib/ngStorage.js"></script>
+<script src="assets/lib/loading-bar.js"></script>
+<script src="assets/sleda/Sleda.Module.js"></script>
+<script src="assets/sleda/Login.Controller.js"></script>
+<script src="assets/sleda/Sleda.Service.js"></script>
 
-
-
-    <script>var map, vectorSource;</script>
 </body>
 </html>

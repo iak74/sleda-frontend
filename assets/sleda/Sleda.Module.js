@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('angularRestfulAuth', [
+angular.module('sledaModule', [
     'ngStorage',
     'ngRoute',
     'angular-loading-bar',
@@ -11,19 +11,19 @@ angular.module('angularRestfulAuth', [
     $routeProvider.
         when('/', {
             controller: 'MapCtrl',
-            templateUrl: 'partials/home.html'
+            templateUrl: 'resources/partials/home.html'
         }).
         when('/signin', {
-            templateUrl: 'partials/signin.html',
-            controller: 'IndexCtrl'
+            templateUrl: 'resources/partials/signin.html',
+            controller: 'LoginController'
         }).
         when('/signup', {
-            templateUrl: 'partials/signup.html',
-            controller: 'IndexCtrl'
+            templateUrl: 'resources/partials/signup.html',
+            controller: 'LoginController'
         }).
         when('/me', {
-            templateUrl: 'partials/me.html',
-            controller: 'IndexCtrl'
+            templateUrl: 'resources/partials/me.html',
+            controller: 'LoginController'
         }).
         otherwise({
             redirectTo: '/signin'
@@ -35,7 +35,13 @@ angular.module('angularRestfulAuth', [
                     config.headers = config.headers || {};
                     var token = $window.sessionStorage.getItem('sessionId');
                     if (token) {
-                        config.headers.Authorization = 'Bearer ' + token;
+                        //config.headers.Authorization = token;
+                        //config.headers['Access-Control-Allow-Origin'] = '*';
+                        //config.headers['Access-Control-Allow-Methods'] = 'GET,POST,PUT,HEAD,DELETE,OPTIONS';
+                        //config.headers['Access-Control-Allow-Headers'] = 'content-Type,x-requested-with,authorization,accept';
+
+                        //config.headers.Authorization = token;
+                        //config.method = 'POST';
                     } else if ($location.path() !== '/signin') {
                         $window.sessionStorage.removeItem('sessionId');
                         $location.path('/signin');

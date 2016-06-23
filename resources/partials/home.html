@@ -1,0 +1,88 @@
+    <div style="background: #c2c2c2; height: 83.33vh;" class="container-fluid">
+        <!-- modal login -->
+        <div class="modal fade" id="myLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> -->
+                        <h4 class="modal-title" id="myModalLabel">Log in</h4>
+                    </div> <!-- /.modal-header -->
+
+                    <div class="modal-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="uLogin" placeholder="Login">
+                                    <label for="uLogin" class="input-group-addon glyphicon glyphicon-user"></label>
+                                </div>
+                            </div> <!-- /.form-group -->
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="uPassword" placeholder="Password">
+                                    <label for="uPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
+                                </div> <!-- /.input-group -->
+                            </div> <!-- /.form-group -->
+
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Remember me
+                                </label>
+                            </div> <!-- /.checkbox -->
+                        </form>
+
+                    </div> <!-- /.modal-body -->
+
+                    <div class="modal-footer">
+                        <button class="form-control btn btn-primary">Ok</button>
+
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="100" style="width: 0%;">
+                                <span class="sr-only">progress</span>
+                            </div>
+                        </div>
+                    </div> <!-- /.modal-footer -->
+
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- modal login -->
+        
+        <!-- modal -->
+            <div id="myModal" class="modal fade">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button class="close" type="button" data-dismiss="modal">×</button>
+                            <h4 class="modal-title">Заголовок окна</h4>
+                        </div>
+                        <div class="modal-body">Текст уведомления</div>
+                        <div class="modal-footer"><button class="btn btn-default" type="button" data-dismiss="modal">Закрыть</button></div>
+                    </div>
+                </div>
+            </div>        
+        <!-- modal -->
+    
+        <div style="background: #00ffff; height: 25vh;" class="row">
+            <div id="left" style="background: #c1c1c1; border: 0px solid;" class="hidden-xs hidden-sm hidden-md hidden-lg">left</div>
+            <div id="center" style="background: #c8c8c8; border: 0px solid;" class="hidden-xs col-sm-8 col-md-8 col-lg-9">center</div>
+            <div id="right" style="background: #e4e4e4; border: 1px solid #bbb;" class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+                <button class="btn btn-info btn-lg" type="button" data-toggle="modal" data-target="#myModal">Показать всплывающее окно</button>
+                <div id="rightlist" class="row hidden-xs">
+                    <div class="col-xs-12">this is a list</div>
+                </div>
+                <div id="rightmenu" class="row hidden-sm hidden-md hidden-lg">
+                    <div class="col-xs-12">this is a xs menu</div>
+                </div>
+            </div>
+            <div class="clearfix visible-md-block"></div>
+            <div id="details" style="background: #0091d2; border: 1px solid #bbb;" class="hidden-xs hidden-sm hidden-md hidden-lg">
+                <div id="detailslist" class="row">
+                    <div class="col-xs-12 col-md-4" style="background-color: #ffffff; border: 10px solid #0000ff; padding: 10px; height: 14.33vh;">details 1</div>
+                    <div class="col-xs-12 col-md-4" style="background-color: #ffffff; border: 10px solid #0000ff; padding: 10px; height: 14.33vh;">details 2</div>
+                    <div class="col-xs-12 col-md-4" style="background-color: #ffffff; border: 10px solid #0000ff; padding: 10px; height: 14.33vh;">details 3</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    

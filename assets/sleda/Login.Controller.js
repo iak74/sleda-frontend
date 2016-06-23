@@ -9,7 +9,8 @@ angular.module('sledaModule')
         if (!$scope.token) {
             $location.path('/signin');
         } else {
-            sledaMain.auth($scope.token, function (res) {
+            console.log('logged');
+            /* sledaMain.auth($scope.token, function (res) {
                 if (res.type == false) {
                     alert(res.data)
                 } else {
@@ -19,6 +20,7 @@ angular.module('sledaModule')
             }, function () {
                 $rootScope.error = 'Failed to signin';
             });
+            */
         }
 
         //ng-cloak
@@ -54,4 +56,31 @@ angular.module('sledaModule')
                 alert("Failed to logout!");
             });
         };
+        
+        $scope.$on('$viewContentLoaded', function () {
+//$scope.$parent.loadScript('lib/ace/ace.js', 'text/javascript', 'utf-8'); 
+            $scope.loadScript('js/sleda/CS/constants.js', 'text/javascript', 'utf-8');
+        });
+       
+
+        $scope.loadScript = function(url, type, charset) {
+            if (type===undefined) type = 'text/javascript';
+            if (url) {
+                var script = document.querySelector("script[src*='"+url+"']");
+                if (!script) {
+                    var heads = document.getElementsByTagName("head");
+                    if (heads && heads.length) {
+                        var head = heads[0];
+                        if (head) {
+                            script = document.createElement('script');
+                            script.setAttribute('src', url);
+                            script.setAttribute('type', type);
+                            if (charset) script.setAttribute('charset', charset);
+                            head.appendChild(script);
+                        }
+                    }
+                }
+                return script;
+            }
+        }; 
     }]);

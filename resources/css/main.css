@@ -1,0 +1,51 @@
+﻿@media (min-width: 768px) {
+  .container {
+    width: 100% !important;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 100% !important;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 100% !important;
+  }
+}
+
+.container, .container-fluid {
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+body{
+    background: url('/resources/images/promotebgmobile.png') no-repeat;
+    background-size: 100% 700px;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/resources/images/promotebgmobile.png',
+ sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/resources/images/promotebgmobile.png', sizingMethod='scale')";
+    height: 100%;
+    opacity: 0.9;
+}
+
+.full-width-div {
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+
+.half-input {
+	float: left;
+	width: 50%;
+}
+
+.navbar-brand {
+    padding: 1px !important;
+}
+
+.navbar {
+    border-radius: 0px !important;
+}
